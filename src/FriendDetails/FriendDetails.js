@@ -4,16 +4,25 @@ import  { useParams } from 'react-router-dom';
 
 const FriendDetails = () => {
     const {id} = useParams();
-    const [friendDetails, setFriendDetails] = useState([]);
-    console.log(id);
+    const [details, setDetails] = useState([]);
+    // console.log(friendDetails);
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then(response => response.json())
-        .then(data => setFriendDetails(data))
+        .then(data =>{ setDetails(data)
+        console.log(details);
+        })
+
     },[])
     return (
         <div>
-            {/* <h1>This is friend detail information:{friedDetails.name} </h1> */}
+            <h1>This is Detail Information of Friend </h1>
+            <h1>Name: {details.name} </h1>
+            <h2>City: {details.city} </h2>
+            <h3>E-mail: {details.email} </h3>
+            <h4>Phone: {details.phone} </h4>
+            <h5>Website: {details.website} </h5>
+            
         </div>
     );
 };

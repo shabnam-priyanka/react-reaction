@@ -91,7 +91,7 @@ const Friends = (props) => {
         <br/>
         E-mail:{email}
         <br/>
-        <Link to={`/friends/${id}`}><Button variant="contained" color="secondary"> Friends Details: {id}
+        <Link to={`/friend/${id}`}><Button variant="contained" color="secondary"> Friends Details: {id}
         
         </Button></Link> 
         </Typography>
